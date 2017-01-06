@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var PORT = 3000;    // convention UpperCase var is a constant
+var PORT = process.env.PORT || 3000;    // convention UpperCase var is a constant
 
 // to show Date:
 // new Date().toString()
