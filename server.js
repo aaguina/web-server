@@ -4,17 +4,18 @@ var PORT = 3000;    // convention UpperCase var is a constant
 
 // to show Date:
 // new Date().toString()
+var middleware = require('./middleware.js');
 
-var middleware = {
-  requireAuthentication: function (req, res, next) {
-    console.log('private route hit!');
-    next();
-  },
-  logger: function (req, res, next) {
-    console.log(new Date().toString() + ' Request: ' + req.method + ' ' + req.originalUrl);
-    next();
-  }
-}
+// var middleware = {
+//   requireAuthentication: function (req, res, next) {
+//     console.log('private route hit!');
+//     next();
+//   },
+//   logger: function (req, res, next) {
+//     console.log(new Date().toString() + ' Request: ' + req.method + ' ' + req.originalUrl);
+//     next();
+//   }
+// }
 
 app.use(middleware.logger);
 // app.use(middleware.requireAuthentication);
